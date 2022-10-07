@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro.">
+    <div class="max-w-xl text-white text-center font-bold flex flex-col justify-center items-center px-3 m-auto">
+        <img src="background.png" />
+
+        <p class="text-4xl mb-5">Stužkovák 4.B</p>
+        <p class="text-xl mb-5">čtvrtek 3. 11. od 20:00</p>
+        <p class="text-2xl mb-12">Bar Cihelna</p>
+
+        <a
+            class="block text-2xl w-3/5 min-w-fit bg-[#3b5998] rounded block px-4 py-4 mb-10"
+            href="https://facebook.com/events/s/stuzkovak-4b-202223/901530390807413/"
+        >
+            Facebook Event
+        </a>
+
+        <a
+            class="block text-2xl w-3/5 min-w-fit bg-[#65A62E] rounded block px-4 py-4 mb-10"
+            href="https://mapy.cz/s/netakukade"
+        >
+            Cihelna na Mapě
+        </a>
+    </div>
+</Layout>
+
+<style>
+    .background {
+        background-image: url(background.png);
+        background-size: cover;
+        background-size: no-repeat;
+        background-position: center top;
+    }
+</style>
