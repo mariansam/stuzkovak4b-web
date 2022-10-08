@@ -37,11 +37,15 @@ const Falling: React.FC<FallingProps> = (props) => {
     const [depth, setDepth] = useState(() => randomFloatFromInterval(0.001, 1));
 
     const width = useMemo(() => {
-        return WIDTH + map01(depth, -30, 30);
+        return WIDTH + map01(depth, -30, 15);
     }, [depth]);
 
+    const height = useMemo(() => {
+        return width * 1.9;
+    }, [width]);
+
     const maxY = useMemo(() => {
-        return document.body.scrollHeight - HEIGHT;
+        return document.body.scrollHeight - height;
     }, []);
 
     const offsetX = useMemo(() => {
@@ -49,7 +53,7 @@ const Falling: React.FC<FallingProps> = (props) => {
     }, []);
 
     useEffect(() => {
-        const randomSpeed = map01(depth, 4, 25);
+        const randomSpeed = map01(depth, 30, 8);
 
         setInterval(() => {
             setOffsetY(prev => {
@@ -62,7 +66,7 @@ const Falling: React.FC<FallingProps> = (props) => {
 
     return (
         <div className='absolute opacity-95' style={{top: offsetY, left: offsetX}}>
-            <img src="waterfall.png" width={width} />
+            <img src="waterfall.webp" width={width} />
         </div>
     );
 };
